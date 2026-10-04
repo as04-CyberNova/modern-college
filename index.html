@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern College | Innovating Education</title>
+    <meta name="description" content="Welcome to Modern College. Explore our academic programs, admissions, campus life, and more.">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Top Bar (NIET Inspired) -->
+    <div class="topbar-public">
+        <div class="container topbar-inner">
+            <div class="topbar-contact">
+                <span>Email: admission@moderncollege.edu</span>
+                <span>Helpline: +91-9999999999</span>
+            </div>
+            <div class="topbar-links">
+                <a href="pages/alumni.html">Alumni</a>
+                <a href="pages/careers.html">Careers</a>
+                <a href="portal/login.html" class="topbar-highlight">Student Portal</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <div class="brand-text">
+                    Modern College
+                    <span class="brand-sub">Autonomous Institute, Approved by AICTE</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="pages/academics.html">Academics</a>
+                <a href="pages/admissions.html">Admissions</a>
+                <a href="pages/placements.html">Placements</a>
+                <a href="pages/notices.html">Notices</a>
+                                <button id="themeToggle" class="btn btn-outline" style="padding: 0.25rem 0.5rem; margin-left: 1rem; border: none; background: transparent; cursor: pointer; color: var(--text-primary);" aria-label="Toggle Dark Mode">
+                    <svg id="themeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="pages/admissions.html" class="btn btn-primary" style="margin-left: 1rem; color: white;">Apply Now 2026</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- News Ticker -->
+    <div class="news-ticker-container">
+        <div class="ticker-label">Latest Updates</div>
+        <div class="ticker-content">
+            <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
+                <a href="pages/notices.html">Admission Open for B.Tech & MBA (Batch 2026)</a> | 
+                <a href="pages/notices.html">Modern College awarded A+ Grade by NAAC</a> | 
+                <a href="pages/notices.html">Highest Package offered this year is 50 LPA</a> | 
+                <a href="pages/notices.html">Registration for Annual Tech Fest is now live</a>
+            </marquee>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-badge">Ranked #1 in Region</span>
+            <h1>Shape Your Future with Excellence</h1>
+            <p>Empowering the next generation of engineers, leaders, and innovators through outcome-based education and world-class placements.</p>
+            <div class="hero-actions">
+                <a href="pages/admissions.html" class="btn btn-primary btn-lg">Admission Enquiry</a>
+                <a href="pages/academics.html" class="btn btn-outline btn-lg" style="color: white; border-color: white;">Explore Programs</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Accreditations & Approvals (NIET Inspired) -->
+    <section class="section accreditation-section" style="padding: 2rem 0; border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="accreditation-logos">
+                <div class="logo-item">
+                    <h3 style="color: var(--primary-color);">NAAC A+</h3>
+                    <p style="font-size: 0.875rem; color: var(--text-secondary);">Accredited</p>
+                </div>
+                <div class="logo-item">
+                    <h3 style="color: var(--primary-color);">NIRF</h3>
+                    <p style="font-size: 0.875rem; color: var(--text-secondary);">Top 100 Ranked</p>
+                </div>
+                <div class="logo-item">
+                    <h3 style="color: var(--primary-color);">NBA</h3>
+                    <p style="font-size: 0.875rem; color: var(--text-secondary);">Accredited Programs</p>
+                </div>
+                <div class="logo-item">
+                    <h3 style="color: var(--primary-color);">AICTE</h3>
+                    <p style="font-size: 0.875rem; color: var(--text-secondary);">Approved</p>
+                </div>
+                <div class="logo-item">
+                    <h3 style="color: var(--primary-color);">UGC</h3>
+                    <p style="font-size: 0.875rem; color: var(--text-secondary);">Autonomous Status</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links / Statistics -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="card-grid" style="margin-top: 0; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center;">
+                <div class="card">
+                    <h3 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 0.5rem;">45+</h3>
+                    <p class="card-content">Undergraduate Programs</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 0.5rem;">98%</h3>
+                    <p class="card-content">Placement Rate</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 0.5rem;">20:1</h3>
+                    <p class="card-content">Student-to-Faculty Ratio</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 0.5rem;">150+</h3>
+                    <p class="card-content">Student Clubs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Modern College?</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div style="margin-bottom: 1rem; color: var(--accent-color);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    </div>
+                    <h3 class="card-title">Academic Excellence</h3>
+                    <p class="card-content">Our rigorous curriculum is designed in collaboration with industry leaders to ensure you are ready for the modern workforce.</p>
+                </div>
+                <div class="card">
+                    <div style="margin-bottom: 1rem; color: var(--success);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3 class="card-title">Top Placements</h3>
+                    <p class="card-content">Partnering with Fortune 500 companies, we provide unparalleled internship and career placement opportunities.</p>
+                </div>
+                <div class="card">
+                    <div style="margin-bottom: 1rem; color: var(--warning);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                    </div>
+                    <h3 class="card-title">Vibrant Campus Life</h3>
+                    <p class="card-content">Engage in a dynamic environment with diverse clubs, cultural events, and state-of-the-art sports facilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Modern College</h4>
+                    <p style="color: #94a3b8; margin-bottom: 1rem;">Empowering minds, transforming futures. Innovating education for a better tomorrow.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="pages/academics.html">Academics</a></li>
+                        <li><a href="pages/admissions.html">Admissions</a></li>
+                        <li><a href="pages/placements.html">Placements</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="pages/notices.html">Notices</a></li>
+                        <li><a href="pages/events.html">Events</a></li>
+                        <li><a href="portal/login.html">Student Portal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul style="color: #94a3b8;">
+                        <li>123 University Avenue</li>
+                        <li>Tech City, TC 10101</li>
+                        <li>info@moderncollege.edu</li>
+                        <li>(555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Modern College. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

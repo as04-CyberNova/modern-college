@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices | Modern College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .filter-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .search-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.375rem;
+            font-family: inherit;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        .notice-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+            transition: all var(--transition-fast);
+        }
+        .notice-card:hover {
+            box-shadow: var(--shadow-sm);
+            border-color: var(--primary-color);
+        }
+        .notice-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        .badge {
+            background: var(--bg-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-weight: 500;
+        }
+        .badge.academic { color: var(--primary-color); background: #e0e7ff; }
+        .badge.event { color: var(--success); background: #d1fae5; }
+        .badge.placement { color: var(--warning); background: #fef3c7; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-brand">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                Modern College
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="academics.html">Academics</a>
+                <a href="admissions.html">Admissions</a>
+                <a href="notices.html" class="active">Notices</a>
+                <a href="events.html">Events</a>
+                <a href="placements.html">Placements</a>
+                <a href="../portal/login.html" class="btn btn-primary">Student Portal</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="padding-top: 4rem; padding-bottom: 4rem; min-height: 80vh;">
+        <h1 style="margin-bottom: 2rem;">Notice Board</h1>
+        
+        <div class="filter-bar">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search notices...">
+            <select id="categoryFilter" class="search-input" style="flex: none; width: 200px;">
+                <option value="all">All Categories</option>
+                <option value="academic">Academic</option>
+                <option value="event">Events</option>
+                <option value="placement">Placements</option>
+            </select>
+        </div>
+
+        <div id="noticeList">
+            <!-- Notices will be injected by JS -->
+        </div>
+        <div id="noResults" style="display: none; text-align: center; padding: 2rem; color: var(--text-secondary);">
+            No notices found matching your criteria.
+        </div>
+    </div>
+
+    <script>
+        const notices = [
+            { id: 1, title: "Mid-Semester Examination Schedule Fall 2026", date: "Oct 10, 2026", category: "academic", content: "The mid-semester examinations will commence from Oct 25. Check the portal for detailed timetables." },
+            { id: 2, title: "Tech Fest 2026 - Call for Volunteers", date: "Oct 08, 2026", category: "event", content: "We are looking for enthusiastic volunteers for the upcoming annual Tech Fest." },
+            { id: 3, title: "Campus Drive: Global Tech Corp", date: "Oct 05, 2026", category: "placement", content: "Global Tech Corp is visiting for software engineering roles. Pre-placement talk at 10 AM on Oct 12." },
+            { id: 4, title: "Revised Academic Calendar", date: "Oct 01, 2026", category: "academic", content: "The academic calendar has been slightly revised to accommodate the winter break." }
+        ];
+
+        const noticeList = document.getElementById('noticeList');
+        const searchInput = document.getElementById('searchInput');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const noResults = document.getElementById('noResults');
+
+        function renderNotices(data) {
+            noticeList.innerHTML = '';
+            if (data.length === 0) {
+                noResults.style.display = 'block';
+                return;
+            }
+            noResults.style.display = 'none';
+            data.forEach(n => {
+                const el = document.createElement('div');
+                el.className = 'notice-card';
+                el.innerHTML = `
+                    <div class="notice-meta">
+                        <span class="badge ${n.category}">${n.category.toUpperCase()}</span>
+                        <span>${n.date}</span>
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem; color: var(--secondary-color);">${n.title}</h3>
+                    <p style="color: var(--text-secondary);">${n.content}</p>
+                `;
+                noticeList.appendChild(el);
+            });
+        }
+
+        function filterNotices() {
+            const term = searchInput.value.toLowerCase();
+            const category = categoryFilter.value;
+            const filtered = notices.filter(n => {
+                const matchSearch = n.title.toLowerCase().includes(term) || n.content.toLowerCase().includes(term);
+                const matchCat = category === 'all' || n.category === category;
+                return matchSearch && matchCat;
+            });
+            renderNotices(filtered);
+        }
+
+        searchInput.addEventListener('input', filterNotices);
+        categoryFilter.addEventListener('change', filterNotices);
+
+        // Initial render
+        renderNotices(notices);
+    </script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
